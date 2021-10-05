@@ -13,7 +13,8 @@ Depends:
     R (>= 3.0.2),
     foreign (>= 0.8-59),
     lubridate (>= 1.3.3),
-    plyr (>= 1.8.1)
+    plyr (>= 1.8.1),
+    usethis (>= 2.0.1)
 License: What license is it under?
 LazyData: true
 RoxygenNote: 7.1.1
