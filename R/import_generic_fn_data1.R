@@ -5,6 +5,51 @@
 #' @export
 
 import.generic.fn.data1<-function(generic_datazip) {
+  # FN011 eventually needs LAKE and PROTOCOL
+  get_lake <- function(){
+    run_loop <- TRUE
+    while(run_loop){
+      question <- "Please select a lake:\n"
+      options <- "1 = L. Ontario\n2 = L. Huron\n3= L. Erie\n4 = L. Superior\n"
+      answer <-  "Selection:\n"
+      cat(paste0(question, options, answer))
+      lake <- readline(prompt = "")
+      if(!(lake %in% 1:4)){
+        usethis::ui_oops("That was not a valid selection")
+      } else {run_loop <- FALSE}
+    }
+    
+    lake_codes <- data.frame(code = c(1:4), lake_short = c("ON", "HU", "ER", "SU"))
+    cat(paste0("you choose: "), lake_codes$lake_short[lake_codes$code == lake])
+    cat("\n")
+    lake_short_form = lake_codes$lake_short[lake_codes$code == lake]
+    lake_short_form
+  }
+  
+  mylake <- get_lake()
+  
+  get_protocol <- function(){
+    run_protocol_loop <- TRUE
+    while(run_protocol_loop){
+      question <- "Please select a protocol:\n"
+      options <- "1 = Gill net\n2 = Trawl\n3= Trap net\n4 = Other\n"
+      answer <-  "Selection:\n"
+      cat(paste0(question, options, answer))
+      protocol <- readline(prompt = "")
+      if(!(protocol %in% 1:4)){
+        usethis::ui_oops("That was not a valid selection")
+      } else {run_protocol_loop <- FALSE}
+    }
+    
+    protocol_codes <- data.frame(code = c(1:4), protocol_short = c("GN", "TR", "TN", "OTH"))
+    cat(paste0("you choose: "), protocol_codes$protocol_short[protocol_codes$code == protocol])
+    cat("\n")
+    protocol_short_form = protocol_codes$protocol_short[protocol_codes$code == protocol]
+    protocol_short_form
+  }
+  
+  myprotocol <- get_protocol()
+  
   # check that only 1 file is provided
   if(length(generic_datazip)!=1) {
     usethis::ui_stop('This function can only import a single file')
@@ -56,6 +101,8 @@ import.generic.fn.data1<-function(generic_datazip) {
   alldata <- lapply(AllTables, import_table)
   
   names(alldata) <- AllTables
+  alldata$FN011$LAKE <- mylake 
+  alldata$FN011$PROTOCOL <- myprotocol
 
   usethis::ui_done("Data has been imported with each table as a list.")
   
