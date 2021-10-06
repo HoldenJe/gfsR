@@ -106,6 +106,10 @@ import.generic.fn.data1<-function(generic_datazip) {
 
   usethis::ui_done("Data has been imported with each table as a list.")
   
+  # clean up temp files
+  unlink(mytemp)
+  
+  # return final data
   alldata
   
 }
