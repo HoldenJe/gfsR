@@ -4,12 +4,10 @@
 \alias{import.generic.fn.data1}
 \title{import.generic.fn.data1}
 \usage{
-import.generic.fn.data1(generic, mytables = all.tables)
+import.generic.fn.data1(generic_datazip)
 }
 \arguments{
 \item{generic}{File path to FN DATA.ZIP folder}
-
-\item{mytables}{Specify which FN data tables are to be imported.}
 }
 \description{
 A generic import function similar to open.fn.data1.  Project path build is omitted so it must be provided in file path
