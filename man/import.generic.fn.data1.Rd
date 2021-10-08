@@ -4,7 +4,7 @@
 \alias{import.generic.fn.data1}
 \title{import.generic.fn.data1}
 \usage{
-import.generic.fn.data1(generic, mytables = all.tables)
+import.generic.fn.data1(generic_datazip)
 }
 \arguments{
 \item{generic}{File path to FN DATA.ZIP folder}
