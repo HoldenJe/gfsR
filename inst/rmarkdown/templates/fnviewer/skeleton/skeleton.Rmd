@@ -1,0 +1,39 @@
+---
+title: "Fishnet Data Viewer"
+author: "Jeremy Holden"
+date: "Compile on `r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+params:
+  datazip: ~/FNData/NS1/IA02_NS1/DATA.ZIP
+---
+<!-- this document is intended to be run using "knit with parameters" -->
+<!-- the user can then provide a file path to a DATA.ZIP file to generate a report -->
+<!-- alternatively the datazip paramater can be edited above -->
+<!-- this text above this line wil not be rendered in the final document -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(gfsR)
+library(kableExtra)
+library(dplyr)
+```
+
+## Import DATA.ZIP
+```{r dataname, echo=TRUE}
+print(params$datazip)
+```
+
+```{r import, include=FALSE}
+fndat <- import_fn_index_net(params$datazip)
+```
+
+
+## FN011
+```{r fn011, echo=FALSE}
+fndat$FN011 |> 
+  select(PRJ_CD, PRJ_NM, PRJ_LDR, FOF_NM, WBY_NM, PRJ_DATE0, PRJ_DATE1) |> 
+  kbl() |> 
+  kable_styling(position="left", full_width = F)
+```
+
+

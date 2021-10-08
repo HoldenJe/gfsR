@@ -1,0 +1,4 @@
+name: FNViewer
+description: >
+   Template for viewing FN2 table summaries
+create_dir: FALSE
