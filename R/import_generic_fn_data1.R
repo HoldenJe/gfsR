@@ -1,7 +1,6 @@
 #' import.generic.fn.data1
 #' @description A generic import function similar to open.fn.data1.  Project path build is omitted so it must be provided in file path
 #' @param generic File path to FN DATA.ZIP folder
-#' @param mytables Specify which FN data tables are to be imported.
 #' @export
 
 import.generic.fn.data1<-function(generic_datazip) {
