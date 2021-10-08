@@ -1,6 +1,6 @@
 Package: gfsR
 Title: Compilation of R functions for use with the GFS FN data
-Version: 0.1.3.20211005
+Version: 0.1.4.2
 Authors@R: c(person("Jeremy", "Holden", role=c("aut", "cre"),
     email="jeremy.holden@ontario.ca"),person("Mike", "Yuille", role=c('aut','cre')))
 Author: Jeremy Holden and Mike Yuille
@@ -17,4 +17,4 @@ Depends:
     usethis (>= 2.0.1)
 License: What license is it under?
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
