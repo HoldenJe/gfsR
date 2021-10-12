@@ -60,6 +60,8 @@ import_fn_index_net<-function(generic_datazip) {
   
   names(alldata) <- AllTables
   
+  alldata <- lapply(alldata, FUN = function(x) {x |> purrr::map(fix_date) |> dplyr::bind_rows()})
+  
   usethis::ui_done("Data has been imported with each table as a list.")
   
   alldata
