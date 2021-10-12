@@ -12,7 +12,7 @@ params:
 <!-- this text above this line wil not be rendered in the final document -->
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(gfsR)
 library(kableExtra)
 library(dplyr)
@@ -29,11 +29,31 @@ fndat <- import_fn_index_net(params$datazip)
 
 
 ## FN011
-```{r fn011, echo=FALSE}
+```{r fn011}
 fndat$FN011 |> 
   select(PRJ_CD, PRJ_NM, PRJ_LDR, FOF_NM, WBY_NM, PRJ_DATE0, PRJ_DATE1) |> 
   kbl() |> 
   kable_styling(position="left", full_width = F)
 ```
 
+## FN121
+```{r fn121table}
+fndat$FN121 |> 
+  group_by(AREA) |> 
+  summarize(N = n()) |> 
+  kbl() |> 
+  kable_styling(position="left", full_width = F)
+```
+
+```{r fn121map}
+library(leaflet)
+leaflet(fndat$FN121) |> addTiles() |> addCircles()
+```
+
+## FN125
+```{r fn125}
+fndat$FN125 |> 
+  group_by(SPC) |> 
+  summarize(N = n())
+```
 
