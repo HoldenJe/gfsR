@@ -60,10 +60,18 @@ import_fn_index_net<-function(generic_datazip) {
   
   names(alldata) <- AllTables
   
+  # fix dates
   alldata <- lapply(alldata, FUN = function(x) {x |> purrr::map(fix_date) |> dplyr::bind_rows()})
   
-  usethis::ui_done("Data has been imported with each table as a list.")
+  # fix SILOC
+  if("SILOC" %in% names(alldata$FN121)) {
+       alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$SILOC)
+   } else if ("XSILOC1" %in% names(alldata$FN121)) {
+    alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$XSILOC1)
+   }
   
+  # give the data to the user
+  usethis::ui_done("Data has been imported with each table as a list.")
   alldata
   
 }
