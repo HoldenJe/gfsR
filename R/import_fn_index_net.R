@@ -67,7 +67,13 @@ import_fn_index_net<-function(generic_datazip) {
        alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$SILOC)
    } else if ("XSILOC1" %in% names(alldata$FN121)) {
     alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$XSILOC1)
+    alldata$FN121 <- alldata$FN121 |> dplyr::rename(DD_LAT0 = LAT, DD_LON0 = LON)
    }
+  
+  if("XSILOC2" %in% names(alldata$FN121)) {
+    alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$XSILOC2)
+    alldata$FN121 <- alldata$FN121 |> dplyr::rename(DD_LAT1 = LAT, DD_LON1 = LON)
+  }
   
   # give the data to the user
   usethis::ui_done("Data has been imported with each table as a list.")
