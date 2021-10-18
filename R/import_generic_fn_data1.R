@@ -70,8 +70,7 @@ import.generic.fn.data1<-function(generic_datazip) {
     usethis::ui_stop("Input file expects a DATA.ZIP file")
     }
   
-  AllTables<-c('FN011', 'FN012', 'FN013', 'FN014', 'FN028', 'FN121', 
-                'FN122', 'FN123','FN124','FN125','FN126','FN127')
+  AllTables <- All_FN_Tables()
   
   # Create and unzip data to a temp file
   mytemp <- tempdir()
