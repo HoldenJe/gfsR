@@ -38,22 +38,26 @@ fndat$FN011 |>
 
 ## FN121
 ```{r fn121table}
-fndat$FN121 |> 
-  group_by(AREA) |> 
-  summarize(N = n()) |> 
-  kbl() |> 
-  kable_styling(position="left", full_width = F)
+if("AREA" %in% fndat$FN121){
+  fndat$FN121 |> 
+    group_by(AREA) |> 
+    summarize(N = n()) |> 
+    kbl() |> 
+    kable_styling(position="left", full_width = F)
+}
+
 ```
 
 ```{r fn121map}
 library(leaflet)
-leaflet(fndat$FN121) |> addTiles() |> addCircles()
+leaflet(fndat$FN121) |> addTiles() |> addCircles(lat =~DD_LAT0, lng = ~DD_LON0)
 ```
 
 ## FN125
 ```{r fn125}
 fndat$FN125 |> 
   group_by(SPC) |> 
-  summarize(N = n())
+  summarize(N = n()) |> 
+  kbl()
 ```
 
