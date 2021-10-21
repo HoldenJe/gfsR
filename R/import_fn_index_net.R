@@ -65,6 +65,8 @@ import_fn_index_net<-function(generic_datazip) {
   # fix SILOC
   if("SILOC" %in% names(alldata$FN121)) {
        alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$SILOC)
+       alldata$FN121 <- alldata$FN121 |> dplyr::rename(DD_LAT0 = LAT, DD_LON0 = LON) |> 
+         mutate(DD_LAT1 = NA, DD_LON1 = NA)
    } else if ("XSILOC1" %in% names(alldata$FN121)) {
     alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$XSILOC1)
     alldata$FN121 <- alldata$FN121 |> dplyr::rename(DD_LAT0 = LAT, DD_LON0 = LON)
