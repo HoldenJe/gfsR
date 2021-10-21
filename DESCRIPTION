@@ -10,7 +10,7 @@ Description: This package contains a number of functions used to manage,
     Station, Lake Ontario Management Unit, Ontario Ministry of Natural
     Resources and Forestry.
 Depends:
-    R (>= 3.0.2),
+    R (>= 4.1),
     foreign (>= 0.8-59),
     lubridate (>= 1.3.3),
     plyr (>= 1.8.1),
