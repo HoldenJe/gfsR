@@ -1,6 +1,6 @@
 Package: gfsR
 Title: Compilation of R functions for use with the GFS FN data
-Version: 0.1.4.7
+Version: 0.1.4.8
 Authors@R: c(person("Jeremy", "Holden", role=c("aut", "cre"),
     email="jeremy.holden@ontario.ca"),person("Mike", "Yuille", role=c('aut','cre')))
 Author: Jeremy Holden and Mike Yuille
