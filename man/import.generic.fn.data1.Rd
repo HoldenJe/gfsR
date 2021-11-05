@@ -9,6 +9,10 @@ import.generic.fn.data1(generic_datazip)
 \arguments{
 \item{generic}{File path to FN DATA.ZIP folder}
 }
+\value{
+a list of FN2 tables
+}
 \description{
-A generic import function similar to open.fn.data1.  Project path build is omitted so it must be provided in file path
+A generic import function.  Project file path build is omitted so it 
+must be provided as part of the argument.
 }

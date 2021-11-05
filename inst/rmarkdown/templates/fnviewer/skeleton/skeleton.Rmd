@@ -1,7 +1,7 @@
 ---
 title: "Fishnet Data Viewer"
 author: "Jeremy Holden"
-date: "Compile on `r format(Sys.time(), '%d %B, %Y')`"
+date: "Compiled on `r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 params:
   datazip: ~/FNData/NS1/IA02_NS1/DATA.ZIP

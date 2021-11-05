@@ -1,66 +1,28 @@
 #' import.generic.fn.data1
-#' @description A generic import function similar to open.fn.data1.  Project path build is omitted so it must be provided in file path
+#' @description A generic import function.  Project file path build is omitted so it 
+#' must be provided as part of the argument.
 #' @param generic File path to FN DATA.ZIP folder
+#' @return a list of FN2 tables
 #' @export
+#' \dontrun{
+#' fn <- import.generic.fn.data("~/FNData/NS1/IA02_NS1/DATA.ZIP")
+#' fn$FN011
+#' lapply(fn, head)
+#'}
 
 import.generic.fn.data1<-function(generic_datazip) {
-  # FN011 eventually needs LAKE and PROTOCOL
-  get_lake <- function(){
-    run_loop <- TRUE
-    while(run_loop){
-      question <- "Please select a lake:\n"
-      options <- "1 = L. Ontario\n2 = L. Huron\n3= L. Erie\n4 = L. Superior\n"
-      answer <-  "Selection:\n"
-      cat(paste0(question, options, answer))
-      lake <- readline(prompt = "")
-      if(!(lake %in% 1:4)){
-        usethis::ui_oops("That was not a valid selection")
-      } else {run_loop <- FALSE}
-    }
-    
-    lake_codes <- data.frame(code = c(1:4), lake_short = c("ON", "HU", "ER", "SU"))
-    cat(paste0("you choose: "), lake_codes$lake_short[lake_codes$code == lake])
-    cat("\n")
-    lake_short_form = lake_codes$lake_short[lake_codes$code == lake]
-    lake_short_form
-  }
-  
-  mylake <- get_lake()
-  
-  get_protocol <- function(){
-    run_protocol_loop <- TRUE
-    while(run_protocol_loop){
-      question <- "Please select a protocol:\n"
-      options <- "1 = Gill net\n2 = Trawl\n3= Trap net\n4 = Other\n"
-      answer <-  "Selection:\n"
-      cat(paste0(question, options, answer))
-      protocol <- readline(prompt = "")
-      if(!(protocol %in% 1:4)){
-        usethis::ui_oops("That was not a valid selection")
-      } else {run_protocol_loop <- FALSE}
-    }
-    
-    protocol_codes <- data.frame(code = c(1:4), protocol_short = c("GN", "TR", "TN", "OTH"))
-    cat(paste0("you choose: "), protocol_codes$protocol_short[protocol_codes$code == protocol])
-    cat("\n")
-    protocol_short_form = protocol_codes$protocol_short[protocol_codes$code == protocol]
-    protocol_short_form
-  }
-  
-  myprotocol <- get_protocol()
-  
   # check that only 1 file is provided
   if(length(generic_datazip)!=1) {
     usethis::ui_stop('This function can only import a single file')
     break
-    }
+  }
   
   # check that the file exists
   if(file.exists(generic_datazip)) {
     usethis::ui_done("File exists")
   } else {
     usethis::ui_stop("File not found. Check file path.")
-    }
+  }
   
   # check that a DATA.ZIP file has been provided
   has_zip <- grep(generic_datazip, pattern = "DATA\\.ZIP$")
@@ -68,7 +30,7 @@ import.generic.fn.data1<-function(generic_datazip) {
     usethis::ui_done("DATA.ZIP input accepted")
   } else {
     usethis::ui_stop("Input file expects a DATA.ZIP file")
-    }
+  }
   
   AllTables <- All_FN_Tables()
   
@@ -99,9 +61,7 @@ import.generic.fn.data1<-function(generic_datazip) {
   alldata <- lapply(AllTables, import_table)
   
   names(alldata) <- AllTables
-  alldata$FN011$LAKE <- mylake 
-  alldata$FN011$PROTOCOL <- myprotocol
-
+  
   usethis::ui_done("Data has been imported with each table as a list.")
   
   # clean up temp files

@@ -11,8 +11,12 @@ import.generic.fn.data(generic, mytables = all.tables)
 
 \item{mytables}{Specify which FN data tables are to be imported.}
 }
+\value{
+a list of FN2 tables
+}
 \description{
-A generic import function similar to open.fn.data to open and compile multiple FN projects.  Project path build is omitted so it must be provided in file path.
-
-This function allows the import of projects other than 'GL1' and 'TW1'.
+A generic import function will open and compile multiple FN projects.  
+Project path build is omitted so it must be provided in file path.  
+This function allows the import of projects other than 'GL1' and 'TW1' but doesn't not
+format the outputs to the same extent.
 }
