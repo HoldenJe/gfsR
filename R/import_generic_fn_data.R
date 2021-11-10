@@ -7,7 +7,7 @@
 #' @param mytables Specify which FN data tables are to be imported.
 #' @export
 #' @return a list of FN2 tables
-#' @example 
+#' @examples 
 #' \dontrun{
 #' prjlist <- c("~/FNData/NS1/IA02_NS1/DATA.ZIP", "~/FNData/GL1/IA15_GL1/DATA.ZIP")
 #' fn <- import.generic.fn.data(prjlist)

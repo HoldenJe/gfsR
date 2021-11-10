@@ -4,6 +4,7 @@
 #' @param generic File path to FN DATA.ZIP folder
 #' @return a list of FN2 tables
 #' @export
+#' @examples 
 #' \dontrun{
 #' fn <- import.generic.fn.data("~/FNData/NS1/IA02_NS1/DATA.ZIP")
 #' fn$FN011

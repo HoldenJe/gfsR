@@ -16,3 +16,10 @@ a list of FN2 tables
 A generic import function.  Project file path build is omitted so it 
 must be provided as part of the argument.
 }
+\examples{
+\dontrun{
+fn <- import.generic.fn.data("~/FNData/NS1/IA02_NS1/DATA.ZIP")
+fn$FN011
+lapply(fn, head)
+}
+}

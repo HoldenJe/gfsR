@@ -20,3 +20,11 @@ Project path build is omitted so it must be provided in file path.
 This function allows the import of projects other than 'GL1' and 'TW1' but doesn't not
 format the outputs to the same extent.
 }
+\examples{
+\dontrun{
+prjlist <- c("~/FNData/NS1/IA02_NS1/DATA.ZIP", "~/FNData/GL1/IA15_GL1/DATA.ZIP")
+fn <- import.generic.fn.data(prjlist)
+fn$FN011
+lapply(fn, head)
+}
+}
