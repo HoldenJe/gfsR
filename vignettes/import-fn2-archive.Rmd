@@ -1,0 +1,44 @@
+---
+title: "Using gfsR to import FN2 archive files"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using gfsR to import FN2 archive files}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The primary function of `gfsR` is to be able to import FishNet2 (FN2) `DATA.ZIP` files directly in to **R**. This is a short vignette to demonstrate some of the functionality available by using the common functions.
+
+```{r setup}
+library(gfsR)
+```
+
+The most common usage is to import a single FN2 project. This is accomplished by providing the file path directly to one of the import functions. For this example we'll use `import_fn_index_net` to import a gill net project. All functions import FN2 tables as tables in a list and thus will need to be assigned to a variable. This approach was taken to allow the option for different projects to be imported to a local environment at the same time and eventually combined as required.  
+
+```{r import}
+gn <- import_fn_index_net("~/FNData/GL1/IA00_GL1/DATA.ZIP")
+```
+
+The `gfsR` functions make use of messages from the `usethis` package to provide *chatty* functions that provide indications of progress and note any tables that are not available.
+
+A quick way to examine the data is to use `lapply` and `head`.
+```{r examine-import}
+lapply(gn, head)
+```
+
+Frequently users will want to access the tables directly as dataframe in the global environment rather than as a dataframe in a list. This is quickly accomplished with the `list2env` function. **CAUTION**: using the `list2env` will overwrite existing tables in the global environment.
+
+```{r list-2-env}
+ls() # shows current variables in global environment
+list2env(gn, envir = .GlobalEnv) # to move list elements to global env.
+ls() # verify all tables exist in global env.
+```
+
+
