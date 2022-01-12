@@ -77,6 +77,9 @@ import_fn_index_net<-function(generic_datazip) {
     alldata$FN121 <- alldata$FN121 |> dplyr::rename(DD_LAT1 = LAT, DD_LON1 = LON)
   }
   
+  # change from character class to appropriate class
+  alldata <- gl1.vartypes(alldata)
+  
   # give the data to the user
   usethis::ui_done("Data has been imported with each table as a list.")
   alldata
