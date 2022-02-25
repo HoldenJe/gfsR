@@ -14,14 +14,14 @@ import.fn.data<-function(mydir, yr, program, mytables=all.tables) {
    if (i == 1) {year1<-import.fn.data1(mydir, yr[i],program, mytables)
    } else {
      year.next<- import.fn.data1(mydir, yr[i], program, mytables)
-     if('FN011' %in% mytables){year1$FN011<-rbind.fill(year1$FN011, year.next$FN011)}
-     if('FN121' %in% mytables){year1$FN121<-rbind.fill(year1$FN121, year.next$FN121)}
-     if('FN122' %in% mytables){year1$FN122<-rbind.fill(year1$FN122, year.next$FN122)}
-     if('FN123' %in% mytables){year1$FN123<-suppressWarnings(rbind.fill(year1$FN123, year.next$FN123))} #suppressWarnings needed for problems with xFRZN_DT and xFRSH_DT   
-     if('FN124' %in% mytables){year1$FN124<-rbind.fill(year1$FN124, year.next$FN124)}    
-     if('FN125' %in% mytables){year1$FN125<-rbind.fill(year1$FN125, year.next$FN125)}    
-     if('FN126' %in% mytables){year1$FN126<-rbind.fill(year1$FN126, year.next$FN126)}    
-     if('FN127' %in% mytables){year1$FN127<-rbind.fill(year1$FN127, year.next$FN127)}
+     if('FN011' %in% mytables){year1$FN011<-dplyr::bind_rows(year1$FN011, year.next$FN011)}
+     if('FN121' %in% mytables){year1$FN121<-dplyr::bind_rows(year1$FN121, year.next$FN121)}
+     if('FN122' %in% mytables){year1$FN122<-dplyr::bind_rows(year1$FN122, year.next$FN122)}
+     if('FN123' %in% mytables){year1$FN123<-suppressWarnings(dplyr::bind_rows(year1$FN123, year.next$FN123))} #suppressWarnings needed for problems with xFRZN_DT and xFRSH_DT   
+     if('FN124' %in% mytables){year1$FN124<-dplyr::bind_rows(year1$FN124, year.next$FN124)}    
+     if('FN125' %in% mytables){year1$FN125<-dplyr::bind_rows(year1$FN125, year.next$FN125)}    
+     if('FN126' %in% mytables){year1$FN126<-dplyr::bind_rows(year1$FN126, year.next$FN126)}    
+     if('FN127' %in% mytables){year1$FN127<-dplyr::bind_rows(year1$FN127, year.next$FN127)}
      }
   }
  } else {year1<-import.fn.data1(mydir, yr,program, mytables)}
