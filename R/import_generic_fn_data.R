@@ -23,14 +23,14 @@ import.generic.fn.data<-function(generic, mytables=all.tables){
   for (i in 1:length(generic)){
     if (i==1) {year1<-import.generic.fn.data1(generic[i])}
     else {newdata<-import.generic.fn.data1(generic[i])
-        year1$FN011<-plyr::rbind.fill(year1$FN011, newdata$FN011)
-        year1$FN121<-plyr::rbind.fill(year1$FN121, newdata$FN121)
-        year1$FN122<-plyr::rbind.fill(year1$FN122, newdata$FN122)
-        year1$FN123<-plyr::rbind.fill(year1$FN123, newdata$FN123)
-        year1$FN124<-plyr::rbind.fill(year1$FN124, newdata$FN124)
-        year1$FN125<-plyr::rbind.fill(year1$FN125, newdata$FN125)
-        year1$FN126<-plyr::rbind.fill(year1$FN126, newdata$FN126)
-        year1$FN127<-plyr::rbind.fill(year1$FN127, newdata$FN127)
+        year1$FN011<-dplyr::bind_rows(year1$FN011, newdata$FN011)
+        year1$FN121<-dplyr::bind_rows(year1$FN121, newdata$FN121)
+        year1$FN122<-dplyr::bind_rows(year1$FN122, newdata$FN122)
+        year1$FN123<-dplyr::bind_rows(year1$FN123, newdata$FN123)
+        year1$FN124<-dplyr::bind_rows(year1$FN124, newdata$FN124)
+        year1$FN125<-dplyr::bind_rows(year1$FN125, newdata$FN125)
+        year1$FN126<-dplyr::bind_rows(year1$FN126, newdata$FN126)
+        year1$FN127<-dplyr::bind_rows(year1$FN127, newdata$FN127)
     }
   }
   year1
