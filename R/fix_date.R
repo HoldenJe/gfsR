@@ -6,7 +6,7 @@
 #' @examples fix_date(as.Date("1920-07-10")); fix_date(as.Date("1990-07-10")) 
 
 fix_date <- function(fndt0) {
-  if(is.Date(fndt0)){
+  if(lubridate::is.Date(fndt0)){
     dtfixed <- as.Date(ifelse(fndt0<"1940-01-01", 
                  format(fndt0,"20%y-%m-%d"),
                  format(fndt0)))
