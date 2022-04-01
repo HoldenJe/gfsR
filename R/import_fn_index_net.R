@@ -1,7 +1,7 @@
 #' import_fn_index_net
 #' @description A generic import function similar to open.fn.data1 but without interactivity.. 
 #' Project path build is omitted so it must be provided in file path.
-#' @param generic File path to FN DATA.ZIP folder
+#' @param generic_datazip File path to FN DATA.ZIP folder
 #' @export
 
 import_fn_index_net<-function(generic_datazip) {
@@ -66,7 +66,7 @@ import_fn_index_net<-function(generic_datazip) {
   if("SILOC" %in% names(alldata$FN121)) {
        alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$SILOC)
        alldata$FN121 <- alldata$FN121 |> dplyr::rename(DD_LAT0 = LAT, DD_LON0 = LON) |> 
-         mutate(DD_LAT1 = NA, DD_LON1 = NA)
+         dplyr::mutate(DD_LAT1 = NA, DD_LON1 = NA)
    } else if ("XSILOC1" %in% names(alldata$FN121)) {
     alldata$FN121 <- SILOC2COORD(alldata$FN121, alldata$FN121$XSILOC1)
     alldata$FN121 <- alldata$FN121 |> dplyr::rename(DD_LAT0 = LAT, DD_LON0 = LON)
