@@ -1,7 +1,13 @@
 #' import_fn_creel
 #' @description A generic import function similar to open.fn.data1 but for creel files.  
-#' Project path build is omitted so it must be provided in file path
-#' @param generic File path to FN DATA.ZIP folder
+#' Project path build is omitted so it must be provided in file path. The function
+#' will import the following tables: FN011, FN012, FN022, FN023, FN024, 
+#' FN025, FN026, FN028, FN111, FN112, FN121, FN123, FN124, FN125, FN126,
+#'  and FN127.
+#' @param generic_datazip File path to FN DATA.ZIP folder for a creel project
+#' @returns Function returns a list of FN tables. If a table is not included
+#' in the FN project an empty data frame will still be returned as well as 
+#' a `usethis` message during import.
 #' @export
 
 import_fn_creel <- function(generic_datazip) {
@@ -26,8 +32,8 @@ import_fn_creel <- function(generic_datazip) {
     usethis::ui_stop("Input file expects a DATA.ZIP file")
   }
   
-  AllTables <- c("FN011", "FN022", "FN023", "FN024", "FN025", "FN026", "FN028", "FN111", 
-                  "FN112", "FN121", "FN123", "FN125", "FN126", "FN127")
+  AllTables <- c("FN011", "FN012", "FN022", "FN023", "FN024", "FN025", "FN026", "FN028", "FN111", 
+                  "FN112", "FN121", "FN123", "FN124", "FN125", "FN126", "FN127")
   
   # Create and unzip data to a temp file
   mytemp <- tempdir()
