@@ -26,8 +26,8 @@ import_fn_creel <- function(generic_datazip) {
     usethis::ui_stop("Input file expects a DATA.ZIP file")
   }
   
-  AllTables <- c("FN011", "FN022", "FN023", "FN024", "FN025", "FN026", "FN028", "FN111", 
-                  "FN112", "FN121", "FN123", "FN125", "FN126", "FN127")
+  AllTables <- c("FN011", "FN012", "FN022", "FN023", "FN024", "FN025", "FN026", "FN028", "FN111", 
+                  "FN112", "FN121", "FN123", "FN124", "FN125", "FN126", "FN127")
   
   # Create and unzip data to a temp file
   mytemp <- tempdir()
