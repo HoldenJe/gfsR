@@ -7,7 +7,7 @@
 import_fn_index_net(generic_datazip)
 }
 \arguments{
-\item{generic}{File path to FN DATA.ZIP folder}
+\item{generic_datazip}{File path to FN DATA.ZIP folder}
 }
 \description{
 A generic import function similar to open.fn.data1 but without interactivity.. 
