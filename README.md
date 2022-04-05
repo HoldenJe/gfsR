@@ -4,6 +4,9 @@ The package contains a suite of tools helpful for working with FishNet2 data fil
 The most up to date version can be installed using:
 `devtools::install_github("HoldenJe/gfsR")`
 
+# Contributions
+Contributions from users are welcomed. Please review [CONTRIBUTING Guidelines](CONTRIBUTING.md) for work flow instructions.
+
 ## Examples
 - Creel data archive  
 `creel <- import_fn_creel("~/FNData/WCH/SF18_WCH/DATA.ZIP")`  
