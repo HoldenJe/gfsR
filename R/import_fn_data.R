@@ -40,11 +40,11 @@ import.fn.data<-function(mydir, yr, program, mytables=all.tables) {
     all.fndata$FN121$EFFDT0<-as.Date(ifelse(all.fndata$FN121$EFFDT0<"1940-01-01", format(all.fndata$FN121$EFFDT0,"20%y-%m-%d"),format(all.fndata$FN121$EFFDT0)))
     all.fndata$FN121$EFFDT1<-as.Date(ifelse(all.fndata$FN121$EFFDT1<"1940-01-01", format(all.fndata$FN121$EFFDT1,"20%y-%m-%d"),format(all.fndata$FN121$EFFDT1)))
     all.fndata$FN121$xEFFDUR<-all.fndata$FN121$EFFDT1 - all.fndata$FN121$EFFDT0
-    all.fndata$FN121$YEAR<-year(all.fndata$FN121$EFFDT0)
+    all.fndata$FN121$YEAR<-lubridate::year(all.fndata$FN121$EFFDT0)
  }
   if(program %in% c('TW1', 'TW2', 'TW3') | program == '061'| program == '062' & 'FN121' %in% mytables) {
     all.fndata$FN121$DATE<-as.Date(ifelse(all.fndata$FN121$DATE<"1940-01-01", format(all.fndata$FN121$DATE,"20%y-%m-%d"),format(all.fndata$FN121$DATE)))
-    all.fndata$FN121$YEAR<-year(all.fndata$FN121$DATE)
+    all.fndata$FN121$YEAR<-lubridate::year(all.fndata$FN121$DATE)
     all.fndata$FN121$EFFTM0<-as.POSIXct(paste(all.fndata$FN121$DATE,as.character(all.fndata$FN121$EFFTM0)),format = '%Y-%m-%d %H:%M')
     all.fndata$FN121$EFFTM1<-as.POSIXct(paste(all.fndata$FN121$DATE,as.character(all.fndata$FN121$EFFTM1)),format = '%Y-%m-%d %H:%M')
     all.fndata$FN121$EFFDUR<-round(as.numeric(all.fndata$FN121$EFFTM1-all.fndata$FN121$EFFTM0)/60,2)
