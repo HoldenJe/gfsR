@@ -40,7 +40,7 @@ import.fn.data1<-function(mydir, yr, program, mytables=all.tables) {
   mypaths<-file.path(mytemp,mydbf)
   
   # read each dbf in to list
-  rawdata<-lapply(mypaths, read.dbf, as.is=T)
+  rawdata<-lapply(mypaths, foreign::read.dbf, as.is=T)
   names(rawdata)<-mytables
   
   unlink(mytemp)
