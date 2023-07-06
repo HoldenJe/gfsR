@@ -1,0 +1,8 @@
+url: https://holdenje.github.io/gfsR/
+template:
+  bootstrap: 5
+
+development:
+  mode: auto
+  
+  
