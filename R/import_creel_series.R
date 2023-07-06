@@ -7,8 +7,9 @@
 #'
 #' @examples
 #' \dontrun{
-#' cr1 <- import_creel_series{"SC97_WL1/DATA.ZIP", "SC96_WL11/DATA.ZIP"}
+#' cr1 <- import_creel_series("SC97_WL1/DATA.ZIP", "SC96_WL11/DATA.ZIP")
 #' }
+#'
 #'
 
 import_creel_series <- function(datazips) {

@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' gl1 <- import_index_series{"IA21_GL1/DATA.ZIP", "IA22_GL1/DATA.ZIP"}
+#' gl1 <- import_index_series("IA21_GL1/DATA.ZIP", "IA22_GL1/DATA.ZIP")
 #' }
 #'
 import_index_series <- function(datazips) {
