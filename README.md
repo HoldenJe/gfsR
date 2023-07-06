@@ -22,3 +22,5 @@ Contributions from users are welcomed. Please review [CONTRIBUTING Guidelines](C
 `rprocval`: tools for checking data structure and biological attributes  
 https://github.com/HoldenJe/rprocval
 
+[Fishnet Migration Manual](https://fishnetmigration.github.io/FN2DataMigrationManual/) - *an ongoing work-in-progress*
+
