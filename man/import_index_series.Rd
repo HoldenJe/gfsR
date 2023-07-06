@@ -17,7 +17,7 @@ import_index_series: Imports a series of DATA.ZIP files
 }
 \examples{
 \dontrun{
-gl1 <- import_index_series{"IA21_GL1/DATA.ZIP", "IA22_GL1/DATA.ZIP"}
+gl1 <- import_index_series("IA21_GL1/DATA.ZIP", "IA22_GL1/DATA.ZIP")
 }
 
 }

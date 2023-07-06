@@ -5,6 +5,7 @@ Authors@R: c(person("Jeremy", "Holden", role=c("aut", "cre"),
     email="jeremy.holden@ontario.ca"),person("Mike", "Yuille", role=c('aut','cre')))
 Author: Jeremy Holden and Mike Yuille
 Maintainer: Jeremy Holden <jeremy.holden@ontario.ca>
+Encoding: UTF-8
 Description: This package contains a number of functions used to manage,
     inspect and analyze fisheries data collected at the Glenora Fisheries
     Station, Lake Ontario Management Unit, Ontario Ministry of Natural
