@@ -19,7 +19,7 @@ Tables will be returned as items within a list.
 }
 \examples{
 \dontrun{
-cr1_frtable <- import_creel_frtables{"SC97_WL1/DATA.ZIP"}
+cr1_frtable <- import_creel_frtables("SC97_WL1/DATA.ZIP")
 lapply(cr1_frtable, head)
 }
 
