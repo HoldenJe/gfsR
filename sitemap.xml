@@ -4,6 +4,15 @@
     <loc>https://holdenje.github.io/gfsR/404.html</loc>
   </url>
   <url>
+    <loc>https://holdenje.github.io/gfsR/CONTRIBUTING.html</loc>
+  </url>
+  <url>
+    <loc>https://holdenje.github.io/gfsR/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://holdenje.github.io/gfsR/LICENSE.html</loc>
+  </url>
+  <url>
     <loc>https://holdenje.github.io/gfsR/articles/import-fn2-archive.html</loc>
   </url>
   <url>
@@ -13,19 +22,28 @@
     <loc>https://holdenje.github.io/gfsR/authors.html</loc>
   </url>
   <url>
-    <loc>https://holdenje.github.io/gfsR/CONTRIBUTING.html</loc>
-  </url>
-  <url>
     <loc>https://holdenje.github.io/gfsR/index.html</loc>
   </url>
   <url>
-    <loc>https://holdenje.github.io/gfsR/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://holdenje.github.io/gfsR/LICENSE.html</loc>
-  </url>
-  <url>
     <loc>https://holdenje.github.io/gfsR/reference/All_FN_Tables.html</loc>
+  </url>
+  <url>
+    <loc>https://holdenje.github.io/gfsR/reference/SILOC2COORD.html</loc>
+  </url>
+  <url>
+    <loc>https://holdenje.github.io/gfsR/reference/SILOCgetLAT10.html</loc>
+  </url>
+  <url>
+    <loc>https://holdenje.github.io/gfsR/reference/SILOCgetLAT12.html</loc>
+  </url>
+  <url>
+    <loc>https://holdenje.github.io/gfsR/reference/SILOCgetLON10.html</loc>
+  </url>
+  <url>
+    <loc>https://holdenje.github.io/gfsR/reference/SILOCgetLON12.html</loc>
+  </url>
+  <url>
+    <loc>https://holdenje.github.io/gfsR/reference/SpcName.html</loc>
   </url>
   <url>
     <loc>https://holdenje.github.io/gfsR/reference/append.spc.names.html</loc>
@@ -100,25 +118,7 @@
     <loc>https://holdenje.github.io/gfsR/reference/ns1.vartypes.html</loc>
   </url>
   <url>
-    <loc>https://holdenje.github.io/gfsR/reference/SILOC2COORD.html</loc>
-  </url>
-  <url>
-    <loc>https://holdenje.github.io/gfsR/reference/SILOCgetLAT10.html</loc>
-  </url>
-  <url>
-    <loc>https://holdenje.github.io/gfsR/reference/SILOCgetLAT12.html</loc>
-  </url>
-  <url>
-    <loc>https://holdenje.github.io/gfsR/reference/SILOCgetLON10.html</loc>
-  </url>
-  <url>
-    <loc>https://holdenje.github.io/gfsR/reference/SILOCgetLON12.html</loc>
-  </url>
-  <url>
     <loc>https://holdenje.github.io/gfsR/reference/site.cue.html</loc>
-  </url>
-  <url>
-    <loc>https://holdenje.github.io/gfsR/reference/SpcName.html</loc>
   </url>
   <url>
     <loc>https://holdenje.github.io/gfsR/reference/standardize.catch.html</loc>
