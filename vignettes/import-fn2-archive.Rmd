@@ -12,6 +12,11 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library(gfsgillnet)
+library(dplyr)
+library(purrr)
+gn <- map(gfsgn, ~filter(.x, PRJ_CD == "LOA_IA00_GL1"))
 ```
 
 The primary function of `gfsR` is to be able to import FishNet2 (FN2) `DATA.ZIP` files directly in to **R**. This is a short vignette to demonstrate some of the functionality available by using the common functions.
@@ -22,8 +27,8 @@ library(gfsR)
 
 The most common usage is to import a single FN2 project. This is accomplished by providing the file path directly to one of the import functions. For this example we'll use `import_fn_index_net` to import a gill net project. All functions import FN2 tables as tables in a list and thus will need to be assigned to a variable. This approach was taken to allow the option for different projects to be imported to a local environment at the same time and eventually combined as required.  
 
-```{r import}
-gn <- import_fn_index_net("~/FNData/GL1/IA00_GL1/DATA.ZIP")
+```{r import, eval=FALSE}
+gn <- import_fn_index_net("FNData/GL1/IA00_GL1/DATA.ZIP")
 ```
 
 The `gfsR` functions make use of messages from the `usethis` package to provide *chatty* functions that provide indications of progress and note any tables that are not available.
