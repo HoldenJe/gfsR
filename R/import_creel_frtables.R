@@ -99,7 +99,7 @@ import_creel_series_frtables <- function(datazips) {
     fr714 <- dplyr::bind_rows(fr714, fndat[[i]]$FR714)
     fr715 <- dplyr::bind_rows(fr715, fndat[[i]]$FR715)
   }
-  all_FN_Data <- list(FR712 = fr712, FR713 = fr713, FR714 = fr714, FR714 = fr714)
+  all_FN_Data <- list(FR712 = fr712, FR713 = fr713, FR714 = fr714, FR715 = fr715)
   
   lapply(names(all_FN_Data), FUN = function(x) {
     usethis::ui_done(paste0(x, " has been imported"))
