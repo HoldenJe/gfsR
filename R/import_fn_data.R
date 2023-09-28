@@ -11,9 +11,14 @@ import.fn.data<-function(mydir, yr, program, mytables=all.tables) {
  all.tables<-c('FN011', 'FN121', 'FN122', 'FN123','FN124','FN125','FN126','FN127')
   if (length(yr)>1) {
   for (i in 1:length(yr)){
-   if (i == 1) {year1<-import.fn.data1(mydir, yr[i],program, mytables)
+   if (i == 1) {
+     year1<-import.fn.data1(mydir, yr[i],program, mytables)
+     if("XFRSH_DT" %in% names(year1$FN123)) {class(year1$FN123$XFRSH_DT) <- "character"}
+     if("XFRZN_DT" %in% names(year1$FN123)) {class(year1$FN123$XFRZN_DT) <- "character"}
    } else {
      year.next<- import.fn.data1(mydir, yr[i], program, mytables)
+     if("XFRSH_DT" %in% names(year.next$FN123)) {class(year.next$FN123$XFRSH_DT) <- "character"}
+     if("XFRZN_DT" %in% names(year.next$FN123)) {class(year.next$FN123$XFRZN_DT) <- "character"}
      if('FN011' %in% mytables){year1$FN011<-dplyr::bind_rows(year1$FN011, year.next$FN011)}
      if('FN121' %in% mytables){year1$FN121<-dplyr::bind_rows(year1$FN121, year.next$FN121)}
      if('FN122' %in% mytables){year1$FN122<-dplyr::bind_rows(year1$FN122, year.next$FN122)}
