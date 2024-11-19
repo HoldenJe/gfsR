@@ -68,6 +68,28 @@ import_fn_creel <- function(generic_datazip) {
   # clean up temp files
   unlink(mytemp)
   
+  # remove V0 and ENTRY from all tables
+  remove_V0 <- function(tbl_list) {
+    lapply(tbl_list, function(df) {
+      if ("V0" %in% colnames(df)) {
+        df <- df[, !colnames(df) %in% "V0", drop = FALSE]
+      }
+      df
+    })
+  }
+  
+  remove_entry <- function(tbl_list) {
+    lapply(tbl_list, function(df) {
+      if ("ENTRY" %in% colnames(df)) {
+        df <- df[, !colnames(df) %in% "ENTRY", drop = FALSE]
+      }
+      df
+    })
+  }
+  
+  alldata <- remove_V0(alldata)
+  alldata <- remove_entry(alldata)
+  
   # return final data
   alldata
   
