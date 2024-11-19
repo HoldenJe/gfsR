@@ -1,10 +1,9 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   import-fn2-archive: import-fn2-archive.html
-last_built: 2023-09-28T17:12Z
+last_built: 2024-11-19T16:35Z
 urls:
   reference: https://holdenje.github.io/gfsR/reference
   article: https://holdenje.github.io/gfsR/articles
-
