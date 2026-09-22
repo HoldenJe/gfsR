@@ -7,7 +7,7 @@
 #' Tables will be returned as items within a list.
 #' 
 #' @seealso [import_creel_series_frtables()] for combining multiple projects
-#' @return list a list with "FR712", "FR713", "FR714" and "FR715" tables
+#' @return list a list with "FR711", "FR712", "FR713", "FR714" and "FR715" tables
 #' @export
 #'
 #' @examples
@@ -35,7 +35,7 @@ import_creel_frtables <- function(generic_datazip) {
   else {
     usethis::ui_stop("Input file expects a DATA.ZIP file")
   }
-  AllTables <- c("FR712", "FR713", "FR714", "FR715")
+  AllTables <- c("FR711", "FR712", "FR713", "FR714", "FR715")
   mytemp <- tempdir()
   unzip(generic_datazip, exdir = mytemp)
   check_table <- function(fntable) {
@@ -74,7 +74,7 @@ import_creel_frtables <- function(generic_datazip) {
 #' Tables will be returned as items within a list.
 #' 
 #' @seealso [import_creel_frtables()] for combining multiple projects
-#' @return list a list with "FR712", "FR713", "FR714" and "FR715" tables
+#' @return list a list with "FR711", "FR712", "FR713", "FR714" and "FR715" tables
 #' @export
 #'
 #' @examples
@@ -84,6 +84,7 @@ import_creel_frtables <- function(generic_datazip) {
 #' }
 
 import_creel_series_frtables <- function(datazips) {
+  fr711 <- data.frame()
   fr712 <- data.frame()
   fr713 <- data.frame()
   fr714 <- data.frame()
@@ -94,12 +95,13 @@ import_creel_series_frtables <- function(datazips) {
   
   
   for (i in 1:length(fndat)) {
+    fr711 <- dplyr::bind_rows(fr711, fndat[[i]]$FR711)
     fr712 <- dplyr::bind_rows(fr712, fndat[[i]]$FR712)
     fr713 <- dplyr::bind_rows(fr713, fndat[[i]]$FR713)
     fr714 <- dplyr::bind_rows(fr714, fndat[[i]]$FR714)
     fr715 <- dplyr::bind_rows(fr715, fndat[[i]]$FR715)
   }
-  all_FN_Data <- list(FR712 = fr712, FR713 = fr713, FR714 = fr714, FR715 = fr715)
+  all_FN_Data <- list(FR711 = fr711, FR712 = fr712, FR713 = fr713, FR714 = fr714, FR715 = fr715)
   
   lapply(names(all_FN_Data), FUN = function(x) {
     usethis::ui_done(paste0(x, " has been imported"))
