@@ -10,7 +10,7 @@ import_creel_series_frtables(datazips)
 \item{datazips}{a vector of file paths to FN2 DATA.ZIP creel projects}
 }
 \value{
-list a list with "FR712", "FR713", "FR714" and "FR715" tables
+list a list with "FR711", "FR712", "FR713", "FR714" and "FR715" tables
 }
 \description{
 This function is a wrapper for `import_creel_frtables` that will import the FR 

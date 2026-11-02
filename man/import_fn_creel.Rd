@@ -4,10 +4,12 @@
 \alias{import_fn_creel}
 \title{import_fn_creel}
 \usage{
-import_fn_creel(generic_datazip)
+import_fn_creel(generic_datazip, convert_dates = TRUE)
 }
 \arguments{
 \item{generic_datazip}{File path to FN DATA.ZIP folder for a creel project}
+
+\item{convert_dates}{Optional arguement to not convert dates using `correct_fn2creel_legacy_dates`}
 }
 \value{
 Function returns a list of FN tables. If a table is not included

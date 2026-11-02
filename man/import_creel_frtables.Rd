@@ -10,7 +10,7 @@ import_creel_frtables(generic_datazip)
 \item{generic_datazip}{a file path to a single FN2 DATA.ZIP creel project}
 }
 \value{
-list a list with "FR712", "FR713", "FR714" and "FR715" tables
+list a list with "FR711", "FR712", "FR713", "FR714" and "FR715" tables
 }
 \description{
 This function will import the FR report tables from a single FN2 creel project 

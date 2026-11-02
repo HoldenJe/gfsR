@@ -6,9 +6,6 @@
 \usage{
 import_raw_fn_data(generic_datazip)
 }
-\arguments{
-\item{generic_datazip}{}
-}
 \value{
 list of FN Tables
 }

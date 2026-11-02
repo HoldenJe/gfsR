@@ -6,9 +6,6 @@
 \usage{
 import_index_series(datazips)
 }
-\arguments{
-\item{datazips}{}
-}
 \value{
 list of FN2 Tables
 }
