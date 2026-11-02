@@ -9,7 +9,7 @@ FN126, and FN127.
 ## Usage
 
 ``` r
-import_fn_creel(generic_datazip)
+import_fn_creel(generic_datazip, convert_dates = TRUE)
 ```
 
 ## Arguments
@@ -17,6 +17,11 @@ import_fn_creel(generic_datazip)
 - generic_datazip:
 
   File path to FN DATA.ZIP folder for a creel project
+
+- convert_dates:
+
+  Optional arguement to not convert dates using
+  \`correct_fn2creel_legacy_dates\`
 
 ## Value
 

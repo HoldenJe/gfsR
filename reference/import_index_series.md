@@ -8,10 +8,6 @@ import_index_series: Imports a series of DATA.ZIP files
 import_index_series(datazips)
 ```
 
-## Arguments
-
-- datazips:
-
 ## Value
 
 list of FN2 Tables

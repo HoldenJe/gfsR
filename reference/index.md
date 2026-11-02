@@ -20,6 +20,8 @@
   : Append Species Names
 - [`area.cue()`](https://holdenje.github.io/gfsR/reference/area.cue.md)
   : area.cue
+- [`correct_fn2creel_legacy_dates()`](https://holdenje.github.io/gfsR/reference/correct_fn2creel_legacy_dates.md)
+  : Correct legacy FN2 date substitutions
 - [`fill.CATCNT()`](https://holdenje.github.io/gfsR/reference/fill.CATCNT.md)
   : fill.CATCNT
 - [`fill.CATWT()`](https://holdenje.github.io/gfsR/reference/fill.CATWT.md)

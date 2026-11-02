@@ -15,7 +15,7 @@ FN025, FN026, FN028, FN111, FN112, FN121, FN123, FN124, FN125, FN126,
 
     <a class="navbar-brand me-2" href="../index.html">gfsR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@ FN025, FN026, FN028, FN111, FN112, FN121, FN123, FN124, FN125, FN126,
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">import_fn_creel</span><span class="op">(</span><span class="va">generic_datazip</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">import_fn_creel</span><span class="op">(</span><span class="va">generic_datazip</span>, convert_dates <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -61,6 +61,10 @@ FN025, FN026, FN028, FN111, FN112, FN121, FN123, FN124, FN125, FN126,
 
 <dl><dt id="arg-generic-datazip">generic_datazip<a class="anchor" aria-label="anchor" href="#arg-generic-datazip"></a></dt>
 <dd><p>File path to FN DATA.ZIP folder for a creel project</p></dd>
+
+
+<dt id="arg-convert-dates">convert_dates<a class="anchor" aria-label="anchor" href="#arg-convert-dates"></a></dt>
+<dd><p>Optional arguement to not convert dates using `correct_fn2creel_legacy_dates`</p></dd>
 
 </dl></div>
     <div class="section level2">

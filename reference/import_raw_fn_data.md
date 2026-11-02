@@ -9,10 +9,6 @@ missing FN011 fields.
 import_raw_fn_data(generic_datazip)
 ```
 
-## Arguments
-
-- generic_datazip:
-
 ## Value
 
 list of FN Tables

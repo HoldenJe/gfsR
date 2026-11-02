@@ -5,12 +5,14 @@ import_creel_series: Imports a series of DATA.ZIP files
 ## Usage
 
 ``` r
-import_creel_series(datazips)
+import_creel_series(datazips, convert_dates = TRUE)
 ```
 
 ## Arguments
 
 - datazips:
+
+  File path to FN DATA.ZIP folder for a creel project
 
 ## Value
 

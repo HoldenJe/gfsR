@@ -19,7 +19,7 @@ import_creel_series_frtables(datazips)
 
 ## Value
 
-list a list with "FR712", "FR713", "FR714" and "FR715" tables
+list a list with "FR711", "FR712", "FR713", "FR714" and "FR715" tables
 
 ## See also
 
