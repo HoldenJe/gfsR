@@ -1,6 +1,6 @@
 #' import_creel_series: Imports a series of DATA.ZIP files
 #'
-#' @param datazips
+#' @param datazips File path to FN DATA.ZIP folder for a creel project
 #'
 #' @return list of FN2 Tables
 #' @export
@@ -12,7 +12,7 @@
 #'
 #'
 
-import_creel_series <- function(datazips) {
+import_creel_series <- function(datazips, convert_dates = TRUE) {
   fn011 <- data.frame()
   fn012 <- data.frame()
   fn022 <- data.frame()
@@ -31,7 +31,7 @@ import_creel_series <- function(datazips) {
   fn127 <- data.frame()
   
   suppressWarnings(suppressMessages(fndat <-
-                                      lapply(datazips, import_fn_creel)))
+                                      lapply(datazips, import_fn_creel, convert_dates = convert_dates)))
   
   
   for (i in 1:length(fndat)) {

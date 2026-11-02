@@ -5,12 +5,13 @@
 #' FN025, FN026, FN028, FN111, FN112, FN121, FN123, FN124, FN125, FN126,
 #'  and FN127.
 #' @param generic_datazip File path to FN DATA.ZIP folder for a creel project
+#' @param convert_dates Optional arguement to not convert dates using `correct_fn2creel_legacy_dates`
 #' @returns Function returns a list of FN tables. If a table is not included
 #' in the FN project an empty data frame will still be returned as well as 
 #' a `usethis` message during import.
 #' @export
 
-import_fn_creel <- function(generic_datazip) {
+import_fn_creel <- function(generic_datazip, convert_dates = TRUE) {
   # check that only 1 file is provided
   if(length(generic_datazip)!=1) {
     usethis::ui_stop('This function can only import a single file')
@@ -90,7 +91,9 @@ import_fn_creel <- function(generic_datazip) {
   alldata <- remove_V0(alldata)
   alldata <- remove_entry(alldata)
   
-  # return final data
-  alldata
+  if(convert_dates){
+    alldata <- correct_fn2creel_legacy_dates(alldata)
+    return(alldata)
+  } else(return(alldata))
   
 }

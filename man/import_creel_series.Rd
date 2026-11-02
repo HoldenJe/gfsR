@@ -4,10 +4,10 @@
 \alias{import_creel_series}
 \title{import_creel_series: Imports a series of DATA.ZIP files}
 \usage{
-import_creel_series(datazips)
+import_creel_series(datazips, convert_dates = TRUE)
 }
 \arguments{
-\item{datazips}{}
+\item{datazips}{File path to FN DATA.ZIP folder for a creel project}
 }
 \value{
 list of FN2 Tables
