@@ -1,6 +1,6 @@
 Package: gfsR
 Title: Compilation of R functions for use with the GFS FN data
-Version: 0.3.0
+Version: 0.3.0.9000
 Authors@R: c(person("Jeremy", "Holden", role=c("aut", "cre"),
     email="jeremy.holden@ontario.ca"),person("Mike", "Yuille", role=c('aut','cre')))
 Author: Jeremy Holden and Mike Yuille
@@ -19,9 +19,9 @@ Imports:
     dplyr
 License: MIT + file LICENSE
 LazyData: true
-RoxygenNote: 7.3.2
 Suggests: 
     rmarkdown,
     knitr
 VignetteBuilder: knitr
 URL: https://holdenje.github.io/gfsR/
+Config/roxygen2/version: 8.1.1
